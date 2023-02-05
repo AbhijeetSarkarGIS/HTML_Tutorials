@@ -1,0 +1,134 @@
+
+<html>
+  <head>
+    <title>HTML Tutorials</title>
+  </head>
+  <body>
+    <h1>Registration Form</h1>
+    <form>
+      <label for="username">Username:</label>
+      <input type="text" id="username" name="username">
+
+      <br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" id="password" name="password">
+
+      <br><br>
+
+      <label for="gender">Gender:</label>
+      <input type="radio" id="male" name="gender" value="male">
+      <label for="male">Male</label>
+      <input type="radio" id="female" name="gender" value="female">
+      <label for="female">Female</label>
+
+      <br><br>
+
+      <label for="hobbies">Hobbies:</label>
+      <input type="checkbox" id="reading" name="hobbies" value="reading">
+      <label for="reading">Reading</label>
+      <input type="checkbox" id="writing" name="hobbies" value="writing">
+      <label for="writing">Writing</label>
+      <input type="checkbox" id="traveling" name="hobbies" value="traveling">
+      <label for="traveling">Traveling</label>
+
+      <br><br>
+
+      <label for="country">Country:</label>
+      <select id="country" name="country">
+        <option value="">--Select--</option>
+        <option value="USA">India</option>
+        <option value="UK">USA</option>
+        <option value="Canada">Japan</option>
+      </select>
+
+      <br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+
+
+    <h2>Unordered List</h2>
+    <ul>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ul>
+
+    <h2>Ordered List</h2>
+    <ol>
+      <li>Item 1</li>
+      <li>Item 2</li>
+      <li>Item 3</li>
+    </ol>
+
+    <h2>Simple Calculator </h2>
+
+
+    <body>
+        <form>
+          <input type="text" id="operand1" />
+          <select id="operation">
+            <option value="sum">+</option>
+            <option value="product">x</option>
+            <option value="difference">-</option>
+            <option value="quotient">/</option>
+          </select>
+          <input type="text" id="operand2" />
+          <button type="button" id="calculate">Calculate</button>
+        </form>
+        <br />
+        <p id="result">Result:</p>
+      </body>
+      <script>
+        const calculate = document.getElementById("calculate");
+        calculate.addEventListener("click", function () {
+          const operand1 = Number(document.getElementById("operand1").value);
+          const operand2 = Number(document.getElementById("operand2").value);
+          const operation = document.getElementById("operation").value;
+          let result;
+          switch (operation) {
+            case "sum":
+              result = operand1 + operand2;
+              break;
+            case "product":
+              result = operand1 * operand2;
+              break;
+            case "difference":
+              result = operand1 - operand2;
+              break;
+            case "quotient":
+              result = operand1 / operand2;
+              break;
+            default:
+              result = "Invalid operation";
+          }
+          document.getElementById("result").innerHTML = `Result: ${result}`;
+        });
+      </script>
+    
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
+    <style>
+      #map {
+        height: 500px;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="map"></div>
+    <script>
+      var map = L.map('map').setView([22.5397,88.3467], 12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>',
+        maxZoom: 18
+      }).addTo(map);
+    </script>
+
+  </body>
+</html>
+
+
+
